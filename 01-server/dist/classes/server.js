@@ -39,6 +39,8 @@ var MyServer = /** @class */ (function () {
             socket.mensaje(cliente, _this.io);
             //Desconectar
             socket.desconectar(cliente);
+            //Configurar usuario
+            socket.configurarUsuario(cliente, _this.io);
         });
     };
     MyServer.prototype.start = function (callback) {

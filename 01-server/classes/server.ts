@@ -39,10 +39,13 @@ export default class MyServer {
             socket.mensaje(cliente,this.io);
             //Desconectar
             socket.desconectar(cliente);
+            //Configurar usuario
+            socket.configurarUsuario(cliente,this.io);
         });
     }
 
     start(callback: Function){
         this.httpServer.listen(this.port, callback);
     }
+
 }

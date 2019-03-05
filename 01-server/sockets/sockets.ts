@@ -16,3 +16,14 @@ export const mensaje = (cliente:Socket, io:SocketIO.Server)=>{
         
     });
 }
+//configurar usuario
+export const configurarUsuario = (cliente:Socket, io:SocketIO.Server)=>{
+  cliente.on('configurar-usuario',(payload:{nombre:string}, callback:Function) =>{
+
+      console.log('configurando usaurio', payload.nombre);
+      callback({
+          ok:true,
+          mensaje:'Usuario ${ payload.nombre}, configurado'
+      })
+  })
+}
